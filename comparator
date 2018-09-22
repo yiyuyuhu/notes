@@ -47,6 +47,27 @@ Copy
 
 	Comparator<Developer> byName = 
 		(Developer o1, Developer o2)->o1.getName().compareTo(o2.getName());
+		
+Example: use comparator in PriorityQueue		
+
+public static void main(String[] args) {
+        PriorityQueue<String> pq=
+                new PriorityQueue<String>(5, (a,b) -> a.length() - b.length());
+       // or pq = new PriorityQueue<String>(5, Comparator.comparing(String::length));
+        pq.add("Apple");
+        pq.add("PineApple");
+        pq.add("Custard Apple");
+        while (pq.size() != 0)
+        {
+            System.out.println(pq.remove());
+        }
+    }
+    
+This will print:
+
+Apple
+PineApple
+Custard Apple
 
 ---------------------
 https://blog.csdn.net/itmyhome1990/article/details/8952722?utm_source=copy 
