@@ -21,6 +21,20 @@ public  interface  Comparable<T>{
 
 排序的基本原理：使用第一个元素作为根节点，之后如果后面的内容比根节点小，则放在左子树，如果内容比根节点的内容要大，则放在右子树。
 
+
+另一种比较器：Comparator
+
+如果一个类已经开放完成，但是在此类建立的初期并没有实现Comparable接口，此时肯定是无法进行对象排序操作的，所以为了解决这一的问题，java又定义了另一个比较器的操作接口 Comparator 此接口定义在java.util包中，接口定义如下：
+
+public  interface  Comparator<T>{
+
+                 public  int  compare(T o1，T o2);
+
+                 boolean  equals(Object  obj);
+
+}
+
+
 ---------------------
 https://blog.csdn.net/itmyhome1990/article/details/8952722?utm_source=copy 
 
